@@ -23,7 +23,7 @@ const middleware = (req,res,next)=>{
     console.log("Middleware executed");
     next();
 }
-app.use(cors({origin:"http://localhost:5173",credentials:true}));
+app.use(cors({origin:"http://localhost:5173" || "http://localhost:5173",credentials:true}));
 app.use(middleware);
 app.use(cookieParser());
 app.use('/health',healthRouter);
@@ -35,6 +35,6 @@ app.use('/event',eventRoute);
 app.use('/dashboard',dashboardRoutes);
 
 app.use(errorHandler);
-app.listen(PORT,()=>{
+app.listen(PORT,"0.0.0.0",()=>{
     console.log(`Server is running at port ${PORT}`);
 })
