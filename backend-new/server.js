@@ -23,7 +23,7 @@ const middleware = (req,res,next)=>{
     console.log("Middleware executed");
     next();
 }
-app.use(cors({origin:"http://localhost:5173" || "http://localhost:5173",credentials:true}));
+app.use(cors({origin:"https://skill-sync-iwej-6q9qu6nqx-aditya-teams.vercel.app" || "http://localhost:5173",credentials:true}));
 app.use(middleware);
 app.use(cookieParser());
 app.use('/health',healthRouter);
